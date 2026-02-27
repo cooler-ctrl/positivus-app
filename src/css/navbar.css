@@ -1,0 +1,66 @@
+.header {
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 30px 100px;
+  position: relative; 
+}
+
+.logo {
+  position: absolute;
+  left: 100px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-right: 40px;
+}
+
+.nav-links a {
+  font-family: "Space Grotesk", sans-serif;
+  color: #000000;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+
+.nav-links a.active {
+  border-bottom: 2px solid #111;
+}
+
+.nav-links a::after{
+ display: block;
+  content: '';
+  border-bottom: solid 2px #000000;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+.nav-links a:hover::after{
+  transform: scaleX(1);
+}
+
+.nav-button {
+    font-family: "Space Grotesk", sans-serif;
+    border: 2px solid #000000;
+  background: white;
+  color: #000000;
+  padding: 15px 25px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 400;
+}
+.nav-button:hover {
+  transition: all ease-in-out 0.5s;
+  background: #000000;
+  color: white;
+}

@@ -1,0 +1,8 @@
+body{
+    font-family: 'Darker Grotesque', sans-serif;
+}
+
+.safe-area {
+  max-width: calc(100% - 200px); 
+  margin: 0 auto;               
+}
