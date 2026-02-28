@@ -376,13 +376,23 @@ border-radius: 7px;
 }
 .test-grid{
   background-color: #191A23;
-  margin: auto;
+  overflow: hidden;
   padding: 100px;
-  gap: 20px;
   width: 1240px;
+  margin: auto;
   height: 625px;
   border-radius: 45px;
+
+}
+.test-grid-another{
+  display: grid;
+  justify-content: center;
   align-items: center;
+  margin: auto;
+  width: auto;
+  margin: auto;
+  height: auto;
+  gap: 20px;
 }
 .test-card{
   display: block;
@@ -416,12 +426,48 @@ border-radius: 7px;
 }
 .left-arrow,.right-arrow{
   background: none;
+  cursor: pointer;
   color: white;
   width: 40px;
   height: 40px;
   font-size: 30px;
   border: none;
-  margin: 100px;
   justify-content: space-between;
 }
+.left-arrow:hover,.right-arrow:hover{
+  color: #8787877f;
+}
+.buttonat-test{
+  padding-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.slide-1{
+  margin-left: 50px;
+}
+   
+.slide-5{
+  margin-right: 50px;
+}
+.test-flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 50px;
+}
 
+
+.stars {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.star {
+  transition: transform 0.2s ease;
+}
+
+.star.active {
+  transform: scale(1.2);
+}

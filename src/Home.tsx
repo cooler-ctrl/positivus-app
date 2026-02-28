@@ -94,6 +94,26 @@ const team = [
   new Members('Sarah Kim','Content Creator',profileIcon,'2+ years of experience in writing and editing Skilled in creating compelling, SEO-optimized content for various industries'),
 ]
 
+class Testimonial{
+  quote: string
+  name: string
+  role: string
+
+  constructor(quote: string, name: string, role: string){
+    this.quote = quote
+    this.name = name
+    this.role = role
+  }
+}
+
+const testimonials = [
+  new Testimonial('We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.','John Smith','Marketing Director at XYZ Corp'),
+  new Testimonial('3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.','Emily Johnson','PPC Manager'),
+  new Testimonial('2+ years of experience in writing and editing Skilled in creating compelling, SEO-optimized content for various industries result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.','Sarah Kim','Content Creator'),
+]
+
+
+
 
 function WorkingProcess() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -136,6 +156,19 @@ function WorkingProcess() {
 }
 
 export default function Home() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+const nextSlide = () => {
+  setCurrentIndex((prev) =>
+    prev === testimonials.length - 1 ? 0 : prev + 1
+  );
+};
+
+const prevSlide = () => {
+  setCurrentIndex((prev) =>
+    prev === 0 ? testimonials.length - 1 : prev - 1
+  );
+};
+
   return (
     <>
       <section className="landing-section">
@@ -258,16 +291,33 @@ export default function Home() {
                 <h2 className='Greenhead'>Testimonials</h2>
                 <p>Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services</p>
             </div>
-
+              
               <div className="test-grid">
-                <div className="test-card">
+                <div className="test-grid-another">
+                <div className="test-flex">
+                {testimonials.map((Testimonial, index)=>(
+                  <div className="test-card">
                   <div className="bubble">
-                  <p>"We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence."</p>
+                  <p key={index}>{testimonials[currentIndex].quote}</p>
                   </div>
-                  <h2>John Smith</h2><h3>Marketing Director at XYZ Corp</h3>
+                 <h2 key={index}>{testimonials[currentIndex].name}</h2>
+                 <h3 key={index}>{testimonials[currentIndex].role}</h3>
                 </div>
+                ))}</div></div>
 
-                <button className='left-arrow'> <GoArrowLeft /> </button> <button className='right-arrow' > <GoArrowRight /> </button>
+              <div className="buttonat-test">
+                <button className="left-arrow" onClick={prevSlide}><GoArrowLeft /></button>
+                <div className="stars">
+                  {testimonials.map((Testimonial, index)=>(
+                    <svg key={index} width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.0099 2.05941L14 0L11.9604 7.0099L14 14L7.0099 11.9604L0 14L2.05941 7.0099L0 0L7.0099 2.05941Z" fill={currentIndex === index ? "#b9ff66" : "white"}/>
+                    </svg>
+
+                  ))}
+                  
+                </div>
+                <button className="right-arrow" onClick={nextSlide}><GoArrowRight /></button>
+              </div>
               </div>
               </section>
 
