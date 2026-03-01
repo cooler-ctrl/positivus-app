@@ -15,6 +15,7 @@ import arrowImg from './assets/Icon.svg'
 import socialIcon from './assets/Social icon.png'
 import profileIcon from './assets/ian-dooley-d1UPkiFd04A-unsplash 1.png'
 import iconbg from './assets/profilevector.svg'
+import contactImg from './assets/contactIllustration.png'
 
 import magnifyIllustration from './assets/ilustrimisvg.svg'
 import clickIllustration from './assets/clickillustration.png'
@@ -23,6 +24,7 @@ import ballIllustration from './assets/tokyo-sending-messages-from-one-place-to-
 import stackIllustration from './assets/stackilustration.png'
 import paperIllustration from './assets/paper.png'
 import { GoArrowLeft,GoArrowRight } from 'react-icons/go';
+import { ImGithub } from 'react-icons/im';
 
 const logos = [logo1, logo2, logo3, logo4, logo5, logo6]
 
@@ -331,7 +333,43 @@ const prevSlide = () => {
               </div>
               </section>
 
+                  <section className="Contact-us">
+                    <div className="case-title">
+                <h2 className='Greenhead'>Contact Us</h2>
+                <p>Connect with Us: Let's Discuss Your Digital Marketing Needs</p>
+            </div>
+                  <div className="contact-card">
+                    <div className="contact-content">
+                      <form action="/sumbit_page" method="post">
+               <label className="custom-radio">
+  <input type="radio" name="contact" id="hi" />
+  <span className="radio-mark"></span>
+  Say Hi!
+</label>
 
+<label className="custom-radio">
+  <input type="radio" name="contact" id="quote" />
+  <span className="radio-mark"></span>
+  Get a quote
+</label>
+                      <br />
+
+                    <label htmlFor="name">Name</label><br />
+                    <input type="text" name='name' id='name' value="Name"/><br />
+
+                  <label htmlFor="email">Email</label><br />
+                    <input type="email" name='email' id='email' value="Email"/><br />
+
+                    <label htmlFor="message">Message*</label><br />
+                    <input type="text" name='message' id='message' value="Message"/><br />
+
+                    <input type="button" value="Sumbit" />
+                    </form>
+                    </div>
+                    <img src={contactImg} alt="Star Illustration" />
+                  </div>
+                  
+                  </section>
     </>
   )
 }
