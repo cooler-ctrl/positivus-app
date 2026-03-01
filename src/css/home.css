@@ -385,17 +385,23 @@ border-radius: 7px;
 
 }
 .test-grid-another{
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  width: auto;
-  margin: auto;
-  height: auto;
-  gap: 20px;
+ width: 100%;
 }
 .test-card{
-  display: block;
+  flex: 0 0 100px;
+  opacity: 0.4;
+  transform: scale(0.9);
+  transition: all 0.4s ease;
+}
+.test-card.active {
+  opacity: 1;
+  transform: scale(1);
+}
+.test-flex{
+  display: flex;
+  gap: 50px;
+  transition: transform 0.6s ease;
+  will-change: transform;
 }
 .bubble{
   padding: 50px;
@@ -450,12 +456,7 @@ border-radius: 7px;
 .slide-5{
   margin-right: 50px;
 }
-.test-flex{
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 50px;
-}
+
 
 
 .stars {

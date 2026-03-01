@@ -293,17 +293,27 @@ const prevSlide = () => {
             </div>
               
               <div className="test-grid">
-                <div className="test-grid-another">
-                <div className="test-flex">
-                {testimonials.map((Testimonial, index)=>(
-                  <div className="test-card">
-                  <div className="bubble">
-                  <p key={index}>{testimonials[currentIndex].quote}</p>
-                  </div>
-                 <h2 key={index}>{testimonials[currentIndex].name}</h2>
-                 <h3 key={index}>{testimonials[currentIndex].role}</h3>
-                </div>
-                ))}</div></div>
+              <div className="test-grid-another">
+  <div
+    className="test-flex"
+    style={{
+      transform: `translateX(-${currentIndex * 450}px)`
+    }}
+  >
+    {testimonials.map((testimonial, index) => (
+      <div
+        key={index}
+        className={`test-card ${index === currentIndex ? "active" : ""}`}
+      >
+        <div className="bubble">
+          <p>"{testimonial.quote}"</p>
+        </div>
+        <h2>{testimonial.name}</h2>
+        <h3>{testimonial.role}</h3>
+      </div>
+    ))}
+  </div>
+</div>
 
               <div className="buttonat-test">
                 <button className="left-arrow" onClick={prevSlide}><GoArrowLeft /></button>
