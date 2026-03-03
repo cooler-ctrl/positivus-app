@@ -24,7 +24,6 @@ import ballIllustration from './assets/tokyo-sending-messages-from-one-place-to-
 import stackIllustration from './assets/stackilustration.png'
 import paperIllustration from './assets/paper.png'
 import { GoArrowLeft,GoArrowRight } from 'react-icons/go';
-import { ImGithub } from 'react-icons/im';
 
 const logos = [logo1, logo2, logo3, logo4, logo5, logo6]
 
@@ -340,36 +339,61 @@ const prevSlide = () => {
             </div>
                   <div className="contact-card">
                     <div className="contact-content">
-                      <form action="/sumbit_page" method="post">
-               <label className="custom-radio">
-  <input type="radio" name="contact" id="hi" />
-  <span className="radio-mark"></span>
-  Say Hi!
-</label>
+                      <form action="/submit_page" method="post">
 
-<label className="custom-radio">
-  <input type="radio" name="contact" id="quote" />
-  <span className="radio-mark"></span>
-  Get a quote
-</label>
-                      <br />
+                      <label className="custom-radio">
+                        <input type="radio" name="contact" value="hi" required />
+                        <span className="radio-mark"></span>
+                        Say Hi!
+                      </label>
 
-                    <label htmlFor="name">Name</label><br />
-                    <input type="text" name='name' id='name' value="Name"/><br />
+                      <label className="custom-radio">
+                        <input type="radio" name="contact" value="quote" />
+                        <span className="radio-mark"></span>
+                        Get a quote
+                      </label>
 
-                  <label htmlFor="email">Email</label><br />
-                    <input type="email" name='email' id='email' value="Email"/><br />
+                      <br /><br />
 
-                    <label htmlFor="message">Message*</label><br />
-                    <input type="text" name='message' id='message' value="Message"/><br />
+                      <label htmlFor="name">Name</label><br />
+                      <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Name"
+                        required
+                      />
+                      <br /><br />
 
-                    <input type="button" value="Sumbit" />
+                      <label htmlFor="email">Email</label><br />
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="Email"
+                        required
+                      />
+                      <br /><br />
+
+                      <label htmlFor="message">Message*</label><br />
+                      <textarea
+                        name="message"
+                        id="message"
+                        placeholder="Message"
+                        required
+                      />
+                      <br /><br />
+
+                      <button type="submit" className='landing-button contact-button'>Send Message</button>
+
                     </form>
                     </div>
                     <img src={contactImg} alt="Star Illustration" />
                   </div>
                   
                   </section>
+
+                  
     </>
   )
 }
